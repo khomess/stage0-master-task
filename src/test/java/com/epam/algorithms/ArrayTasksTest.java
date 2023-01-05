@@ -44,7 +44,6 @@ public class ArrayTasksTest {
     public void shouldNotUserUtils(){
         assertTrue(notAllowedStrings.isEmpty(), "You use some not allowed utils, such as java.util.Arrays");
     }
-
     @Test
     public void seasonsArrayTest() {
         assertArrayEquals(Stream.of("winter", "spring", "summer", "autumn").toArray(),

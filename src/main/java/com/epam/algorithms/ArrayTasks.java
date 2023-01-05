@@ -1,5 +1,4 @@
 package com.epam.algorithms;
-
 import java.beans.PropertyEditorSupport;
 
 /**
@@ -9,7 +8,7 @@ import java.beans.PropertyEditorSupport;
  */
 public class ArrayTasks {
     public String[] seasonsArray() {
-        return new String[]{"Winter", "Spring", "Summer", "Autumn"};
+        return new String[]{"winter", "spring", "summer", "autumn"};
     }
     public int[] generateNumbers(int length) {
         int[] result = new int[length];
@@ -38,12 +37,32 @@ public class ArrayTasks {
         return result;
     }
     public String[] reverseArray(String[] arr) {
-        return null;
+        String[] reversedArray = new String[arr.length];
+        int j = 0;
+        for (int i = arr.length-1; i >= 0; i--) {
+            reversedArray[j] = arr[i];
+            j++;
+        }
+        return reversedArray;
     }
     public int[] getOnlyPositiveNumbers(int[] arr) {
-        return null;
+        int[] result = new int[0];
+        for (int j : arr)
+            if (j > 0) {
+                if (result.length > 0) {
+                    int[] tempArr = new int[result.length + 1];
+                    tempArr[tempArr.length - 1] = j;
+                    System.arraycopy(result, 0, tempArr, 0, result.length);
+                    result = tempArr;
+                } else {
+                    result = new int[1];
+                    result[0] = j;
+                }
+            }
+        return result;
     }
     public int[][] sortRaggedArray(int[][] arr) {
-        return null;
+        int[][] result = new int[1][1];
+        return result;
     }
 }
